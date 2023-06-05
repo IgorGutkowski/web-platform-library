@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <h2>Twoja biblioteka</h2>
+    </nav>
+    <main>
+      <form id="form">
+        <div>
+          <label for="title">Tytuł:</label>
+          <input
+            type="text"
+            id="title"
+            required
+            minlength="1"
+            maxlength="3777"
+          />
+        </div>
+        <div>
+          <label for="author">Autor:</label>
+          <input
+            id="author"
+            type="text"
+            required
+            minlength="0"
+            maxlength="54"
+          /><br />
+        </div>
+        <div>
+          <label for="release-date">Data wydania:</label>
+          <input
+            id="release-date"
+            type="datetime-local"
+            onchange="console.log(this.value.split('T')[0]);"
+            required
+          /><br />
+        </div>
+        <div>
+          <button type="submit">Dodaj książkę</button>
+        </div>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Data wydania</th>
+            <th class="options">Opcje</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </main>
+  </body>
+</html>
